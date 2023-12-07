@@ -43,7 +43,18 @@ const handleKeyPress = (
       break;
 
     case 'Escape':
+    // Should close the menu and focus on the toggle button
       lastFocusedElement.focus();
+      break;
+
+    //TODO: Support for space bar, enter, and tab key presses.
+    case 'Enter':
+      break;
+
+    case " ":
+      break;
+
+    case "Tab":
       break;
 
     default:
