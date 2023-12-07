@@ -8,12 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MenuAble-Package/MenuAble.git"
+    "url": "git+https://github.com/MenuAble/MenuAble.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MenuAble-Package/MenuAble/issues"
+    "url": "https://github.com/MenuAble/MenuAble/issues"
   },
-  "homepage": "https://github.com/MenuAble-Package/MenuAble#readme"
+  "homepage": "https://github.com/MenuAble/MenuAble#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
