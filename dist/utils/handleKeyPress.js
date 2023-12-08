@@ -3,8 +3,9 @@
  @param {Event} event - The keypress event.
  @param {Element} lastFocusedElement - The last focused element.
  @param {NodeList} itemList - NodeList of elements in the tab trap.
+ @param {MenuButton} menuButton - The button responsible for toggling the menu.
  */
-const handleKeyPress = (event, lastFocusedElement, itemList) => {
+const handleKeyPress = (event, lastFocusedElement, itemList, menuButton) => {
     const listLength = itemList.length;
     const firstTabStopIndex = 0;
     const lastTabStopIndex = listLength - 1;
@@ -13,8 +14,7 @@ const handleKeyPress = (event, lastFocusedElement, itemList) => {
     }
     let currentActiveIndex = Array.from(itemList).indexOf(document.activeElement);
     switch (event.key) {
-        case 'ArrowDown':
-        case 'ArrowRight':
+        case "ArrowDown" || "ArrowRight":
             // Do something for "down arrow" or "right arrow" key press.
             if (currentActiveIndex === lastTabStopIndex) {
                 itemList[firstTabStopIndex].focus();
@@ -23,8 +23,7 @@ const handleKeyPress = (event, lastFocusedElement, itemList) => {
                 itemList[currentActiveIndex + 1].focus();
             }
             break;
-        case 'ArrowUp':
-        case 'ArrowLeft':
+        case "ArrowUp" || "ArrowLeft":
             // Do something for "up arrow" or "left arrow" key press.
             if (currentActiveIndex === firstTabStopIndex) {
                 itemList[lastTabStopIndex].focus();
@@ -33,8 +32,18 @@ const handleKeyPress = (event, lastFocusedElement, itemList) => {
                 itemList[currentActiveIndex - 1].focus();
             }
             break;
-        case 'Escape':
-            lastFocusedElement.focus();
+        case "Escape":
+            // Should close the menu and focus on the toggle button
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.focus();
+            break;
+        //TODO: Support for space bar, enter, and tab key presses.
+        case "Enter":
+            break;
+        case " ":
+            break;
+        case "Tab":
+            itemList[currentActiveIndex + 1].focus();
             break;
         default:
             return; // Quit when this doesn't handle the key event.

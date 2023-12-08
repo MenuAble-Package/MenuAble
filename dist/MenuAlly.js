@@ -1,4 +1,4 @@
-import handleKeyPress from './utils/handleKeyPress';
+import handleKeyPress from "./utils/handleKeyPress";
 class MenuAlly {
     constructor(menuControl, menu, menuItems) {
         this.menuControl = menuControl;
@@ -14,24 +14,24 @@ class MenuAlly {
     createTabTrap() {
         const { menuButton, menuElement, menuItemsElement } = this.getElements();
         if (menuButton && menuElement) {
-            menuButton.addEventListener('click', () => {
-                if (menuButton.getAttribute('aria-expanded') === 'true') {
-                    menuButton.setAttribute('aria-expanded', 'false');
+            menuButton.addEventListener("click", () => {
+                if (menuButton.getAttribute("aria-expanded") === "true") {
+                    menuButton.setAttribute("aria-expanded", "false");
                 }
                 else {
-                    menuButton.setAttribute('aria-expanded', 'true');
+                    menuButton.setAttribute("aria-expanded", "true");
                 }
                 let lastFocusedElement = document.activeElement;
-                let focusableMenuItems = menuElement.querySelectorAll('a');
+                let focusableMenuItems = menuElement.querySelectorAll("a");
                 let firstTabStop = focusableMenuItems[0];
                 firstTabStop.focus();
                 focusableMenuItems.forEach((item) => {
-                    item.addEventListener('keyup', (event) => handleKeyPress(event, lastFocusedElement, focusableMenuItems));
+                    item.addEventListener("keyup", (event) => handleKeyPress(event, lastFocusedElement, focusableMenuItems, menuButton));
                 });
             });
         }
         else {
-            throw new Error('MenuAlly must be instantiated with a menu control and a menu!');
+            throw new Error("MenuAlly must be instantiated with a menu control and a menu!");
         }
     }
 }
