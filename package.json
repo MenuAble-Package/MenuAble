@@ -1,26 +1,27 @@
 {
-	"name": "@menuable/menuable",
-	"version": "1.0.0",
-	"description": "A utility package to enable developers create keyboard accessible menus.",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"complile": "npx tsc"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/MenuAble/MenuAble.git"
-	},
-	"author": "",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/MenuAble/MenuAble/issues"
-	},
-	"homepage": "https://github.com/MenuAble/MenuAble#readme",
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com"
-	},
-	"devDependencies": {
-		"typescript": "^5.3.3"
-	}
+  "name": "@menuable/menuable",
+  "version": "1.0.0",
+  "description": "A utility package to enable developers create keyboard accessible menus.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts",
+    "complile": "npx tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MenuAble/MenuAble.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MenuAble/MenuAble/issues"
+  },
+  "homepage": "https://github.com/MenuAble/MenuAble#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
 }
