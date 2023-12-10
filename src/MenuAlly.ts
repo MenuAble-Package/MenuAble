@@ -37,17 +37,19 @@ class MenuAlly {
         }
 
         const lastFocusedElement = document.activeElement;
-        const focusableMenuItems = menuElement.querySelectorAll('a');
+        const focusableMenuItems = menuElement.querySelectorAll(
+          `${this.menu} > a, ${this.menu} > button ${this.menu} > input`,
+        );
 
-        const firstTabStop = focusableMenuItems[0];
+        const firstTabStop = focusableMenuItems[0] as HTMLElement;
         firstTabStop.focus();
 
         focusableMenuItems.forEach(item => {
           item.addEventListener('keyup', event => {
             handleKeyPress(
-              event,
+              event as KeyboardEvent,
               lastFocusedElement as HTMLElement,
-              focusableMenuItems,
+              focusableMenuItems as NodeListOf<HTMLElement>,
             );
           });
         });
