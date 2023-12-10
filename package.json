@@ -35,10 +35,13 @@
     }
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.0",
     "lint-staged": "^15.2.0",
+    "semantic-release": "^22.0.10",
     "typescript": "^5.3.3"
   },
   "config": {
