@@ -1,12 +1,14 @@
 {
-  "name": "@menuable/menuable",
-  "version": "1.0.0",
+  "name": "@menuable/menually",
+  "version": "0.1.0",
   "description": "A utility package to enable developers create keyboard accessible menus.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts",
-    "complile": "npx tsc"
+    "complile": "npx tsc",
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,30 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
+  "lint-staged": {
+    "*.{css,less,scss,html,ts}": [
+      "prettier --write ."
+    ],
+    "*.js": "eslint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
+  },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
+    "semantic-release": "^22.0.10",
     "typescript": "^5.3.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
