@@ -6,15 +6,27 @@ type Elements = {
   menuItemsElement: NodeListOf<Element> | null;
 };
 
+type MenuAllyInitOptions = {
+  ariaLabel: string | null;
+  ariaExpanded: boolean | null;
+};
+
 class MenuAlly {
   menuControl: string;
   menu: string;
   menuItems?: string;
+  initOptions?: MenuAllyInitOptions;
 
-  constructor(menuControl: string, menu: string, menuItems?: string) {
+  constructor(
+    menuControl: string,
+    menu: string,
+    menuItems?: string,
+    initOptions?: MenuAllyInitOptions
+  ) {
     this.menuControl = menuControl;
     this.menu = menu;
     this.menuItems = menuItems;
+    this.initOptions = initOptions;
   }
 
   getElements(): Elements {
@@ -29,6 +41,14 @@ class MenuAlly {
     const { menuButton, menuElement } = this.getElements();
 
     if (menuButton !== null && menuElement !== null) {
+      if (this.initOptions?.ariaExpanded === true) {
+        menuButton.setAttribute('aria-expanded', 'true');
+      }
+
+      menuButton.setAttribute('aria-expanded', 'false');
+
+      menuElement.setAttribute('role', 'menu');
+
       menuButton.addEventListener('click', () => {
         if (menuButton.getAttribute('aria-expanded') === 'true') {
           menuButton.setAttribute('aria-expanded', 'false');
@@ -38,7 +58,7 @@ class MenuAlly {
 
         const lastFocusedElement = document.activeElement;
         const focusableMenuItems = menuElement.querySelectorAll(
-          `${this.menu} > a, ${this.menu} > button ${this.menu} > input`,
+          `${this.menu} > a, ${this.menu} > button ${this.menu} > input`
         );
 
         const firstTabStop = focusableMenuItems[0] as HTMLElement;
@@ -49,14 +69,14 @@ class MenuAlly {
             handleKeyPress(
               event as KeyboardEvent,
               lastFocusedElement as HTMLElement,
-              focusableMenuItems as NodeListOf<HTMLElement>,
+              focusableMenuItems as NodeListOf<HTMLElement>
             );
           });
         });
       });
     } else {
       throw new Error(
-        'MenuAlly must be instantiated with a menu control and a menu!',
+        'MenuAlly must be instantiated with a menu control and a menu!'
       );
     }
   }
