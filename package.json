@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/Menuable/MenuAlly#readme",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org"
   },
   "lint-staged": {
     "*.{css,less,scss,html,ts}": [
