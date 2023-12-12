@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MenuAble/MenuAble.git"
+    "url": "git+https://github.com/Menuable/MenuAlly.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MenuAble/MenuAble/issues"
+    "url": "https://github.com/Menuable/MenuAlly/issues"
   },
-  "homepage": "https://github.com/MenuAble/MenuAble#readme",
+  "homepage": "https://github.com/Menuable/MenuAlly#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
