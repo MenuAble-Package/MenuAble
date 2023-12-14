@@ -1,6 +1,6 @@
 {
   "name": "menually",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A utility package to enable developers create keyboard accessible menus.",
   "main": "index.js",
   "scripts": {
