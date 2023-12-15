@@ -2,7 +2,7 @@
   "name": "menually",
   "version": "1.0.0",
   "description": "A utility package to enable developers create keyboard accessible menus.",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts",
