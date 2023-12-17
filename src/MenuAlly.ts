@@ -1,4 +1,4 @@
-import handleKeyPress from './utils/handleKeyPress';
+import handleKeyPress from './utils/handleKeyPress.ts';
 
 type Elements = {
   menuButton: Element | null;
@@ -21,7 +21,7 @@ class MenuAlly {
     menuControl: string,
     menu: string,
     menuItems?: string,
-    initOptions?: MenuAllyInitOptions
+    initOptions?: MenuAllyInitOptions,
   ) {
     this.menuControl = menuControl;
     this.menu = menu;
@@ -58,7 +58,7 @@ class MenuAlly {
 
         const lastFocusedElement = document.activeElement;
         const focusableMenuItems = menuElement.querySelectorAll(
-          `${this.menu} > a, ${this.menu} > button ${this.menu} > input`
+          `${this.menu} > a, ${this.menu} > button ${this.menu} > input`,
         );
 
         const firstTabStop = focusableMenuItems[0] as HTMLElement;
@@ -69,14 +69,14 @@ class MenuAlly {
             handleKeyPress(
               event as KeyboardEvent,
               lastFocusedElement as HTMLElement,
-              focusableMenuItems as NodeListOf<HTMLElement>
+              focusableMenuItems as NodeListOf<HTMLElement>,
             );
           });
         });
       });
     } else {
       throw new Error(
-        'MenuAlly must be instantiated with a menu control and a menu!'
+        'MenuAlly must be instantiated with a menu control and a menu!',
       );
     }
   }
