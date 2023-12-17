@@ -1,3 +1,3 @@
-import MenuAlly from './MenuAlly';
+import MenuAlly from './MenuAlly.ts';
 
 export { MenuAlly };
