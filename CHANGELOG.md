@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/Menuable/MenuAlly/compare/v1.1.0...v1.2.0) (2023-12-18)
+
+
+### Bug Fixes
+
+* fix merge conflicts ([ad7585e](https://github.com/Menuable/MenuAlly/commit/ad7585e3587ae3d86e5cb9803075a5ac4cae0ad5))
+
+
+### Features
+
+* **index.ts:** updated exports of the package ([2a61473](https://github.com/Menuable/MenuAlly/commit/2a6147361c0065c2c69b913439dde11e2156dfc5))
+* **package.json:** change the entry point of the package ([0c5fd54](https://github.com/Menuable/MenuAlly/commit/0c5fd54e7681826dab77bc87207f01eb0a8272e4))
+
 # [1.1.0](https://github.com/Menuable/MenuAlly/compare/v1.0.0...v1.1.0) (2023-12-15)
 
 
