@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/Menuable/MenuAlly/compare/v1.0.0...v1.1.0) (2023-12-15)
+
+
+### Features
+
+* **index.ts:** updated exports of the package ([ffeb43a](https://github.com/Menuable/MenuAlly/commit/ffeb43a829be7b35919f704505475e67cacff5d7))
+* **package.json:** change the entry point of the package ([e587f49](https://github.com/Menuable/MenuAlly/commit/e587f4978e8a76b72a08568aa9349e47ebc1cf25))
+
 # 1.0.0 (2023-12-14)
 
 
