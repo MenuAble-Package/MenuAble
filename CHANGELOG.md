@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Menuable/MenuAlly/compare/v1.2.0...v1.3.0) (2023-12-19)
+
+
+### Features
+
+* **menually.ts:** complete base feature for tab trap ([4c6c552](https://github.com/Menuable/MenuAlly/commit/4c6c552d39607a362845b274903502d99890f9bb))
+
 # [1.2.0](https://github.com/Menuable/MenuAlly/compare/v1.1.0...v1.2.0) (2023-12-18)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "menually",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A utility package to enable developers create keyboard accessible menus.",
   "main": "dist/menually.esm.min.js",
   "module": "dist/menually.esm.min.js",
