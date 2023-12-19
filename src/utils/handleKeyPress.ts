@@ -9,7 +9,7 @@
 const handleKeyPress = (
   event: KeyboardEvent,
   lastFocusedElement: HTMLElement,
-  itemList: NodeListOf<HTMLElement>,
+  itemList: HTMLElement[],
 ): void => {
   const listLength = itemList.length;
   const firstTabStopIndex = 0;
