@@ -60,9 +60,9 @@ class MenuAlly {
         menuButton.setAttribute('aria-expanded', 'true');
       }
 
-      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-expanded', 'false'); // set the aria-expanded attribute to false by default
 
-      menuElement.setAttribute('role', 'menu');
+      menuElement.setAttribute('role', 'menu'); // set the role property to menu
 
       menuButton.addEventListener('click', () => {
         if (menuButton.getAttribute('aria-expanded') === 'true') {
@@ -77,6 +77,11 @@ class MenuAlly {
           );
         } else {
           const lastFocusedElement = document.activeElement;
+
+          // Prevent all menuitems from receiving focus via tab key press
+          focusableMenuItems.forEach(menuitem => {
+            menuitem.setAttribute('tabindex', '-1');
+          });
 
           const firstTabStop = focusableMenuItems[0];
           firstTabStop.focus();

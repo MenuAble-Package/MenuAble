@@ -45,6 +45,7 @@ const handleKeyPress = (
       break;
 
     case 'Escape':
+    case 'Tab':
       // Should close the menu and focus on the toggle button
       lastFocusedElement.setAttribute('aria-expanded', 'false');
       lastFocusedElement.focus();
@@ -55,9 +56,6 @@ const handleKeyPress = (
       break;
 
     case ' ':
-      break;
-
-    case 'Tab':
       break;
 
     default:
