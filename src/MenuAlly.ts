@@ -1,8 +1,8 @@
 import handleKeyPress from './utils/handleKeyPress.ts';
 
 type Elements = {
-  menuButton: Element | null;
-  menuElement: Element | null;
+  menuButton: HTMLElement | null;
+  menuElement: HTMLElement | null;
   focusableMenuItems: HTMLElement[] | NodeListOf<HTMLElement>;
 };
 
@@ -30,8 +30,10 @@ class MenuAlly {
   }
 
   getElements(): Elements {
-    const menuButton = document.querySelector(`${this.menuControl}`);
-    const menuElement = document.querySelector(`${this.menu}`);
+    const menuButton = document.querySelector<HTMLElement>(
+      `${this.menuControl}`,
+    );
+    const menuElement = document.querySelector<HTMLElement>(`${this.menu}`);
 
     let focusableMenuItems: HTMLElement[] | NodeListOf<HTMLElement>;
 
@@ -62,7 +64,11 @@ class MenuAlly {
 
       menuButton.setAttribute('aria-expanded', 'false'); // set the aria-expanded attribute to false by default
 
+      menuButton.setAttribute('data-menually-control', this.menuControl); // set the aria-expanded attribute to false by default
+
       menuElement.setAttribute('role', 'menu'); // set the role property to menu
+
+      menuElement.setAttribute('data-menually-menu', this.menu); // set the role property to menu
 
       menuButton.addEventListener('click', () => {
         if (menuButton.getAttribute('aria-expanded') === 'true') {
