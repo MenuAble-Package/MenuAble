@@ -1,9 +1,16 @@
+const isMenuAllyControl = (element: HTMLElement): boolean => {
+  if (element.dataset.menuallyControl === undefined) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
 /**
  @description Handles keypress events within a tab trap.
  @param {KeyboardEvent} event - The keypress event.
  @param {Element} lastFocusedElement - The last focused element.
  @param {NodeList} itemList - NodeList of elements in the tab trap.
- @param {MenuButton} menuButton - The button responsible for toggling the menu.
  */
 
 const handleKeyPress = (
@@ -25,13 +32,19 @@ const handleKeyPress = (
 
   switch (event.key) {
     case 'ArrowDown':
-    case 'ArrowRight':
-      // Do something for "down arrow" or "right arrow" key press.
-      if (currentActiveIndex === lastTabStopIndex) {
-        itemList[firstTabStopIndex].focus();
+      if (isMenuAllyControl(document.activeElement as HTMLElement)) {
+        // if the focused element is a registered MenuAlly control, simulate a click event and open the submenu
+        (document.activeElement as HTMLElement).click();
       } else {
-        itemList[currentActiveIndex + 1].focus();
+        // move focus to the next menuitem
+        if (currentActiveIndex === lastTabStopIndex) {
+          itemList[firstTabStopIndex].focus();
+        } else {
+          itemList[currentActiveIndex + 1].focus();
+        }
       }
+      break;
+    case 'ArrowRight':
       break;
 
     case 'ArrowUp':
@@ -56,6 +69,17 @@ const handleKeyPress = (
       break;
 
     case ' ':
+      lastFocusedElement.setAttribute('aria-expanded', 'false');
+      lastFocusedElement.focus();
+      (document.activeElement as HTMLElement)?.click();
+      break;
+
+    case 'Home':
+      itemList[0].focus();
+      break;
+
+    case 'End':
+      itemList[itemList.length - 1].focus();
       break;
 
     default:
